@@ -20,11 +20,10 @@
 {% block page-inner %}
     <table class="table table-hover">
         <tr>
-            {#            <th>主机名</th>#}
             <th>用户名</th>
             <th>执行时间</th>
             <th>执行命令</th>
-            <th>操作</th>
+            <th>操作<a href="javascript:void(0)" id="Add_cron" class="Add_cron">&nbsp;&nbsp;(新增)</a> </th>
         </tr>
         {% for Cron_user,Cron_list in Cron_dict.items %}
             {% for key,value in Cron_list.items %}
@@ -44,7 +43,7 @@
         <p id="User" class="Id"></p>
         <p>执行时间<input type="text" value="" id="Minute" class="Minute"></p>
         <p>执行命令<input type="text" value="" id="Hour" class="Hour"></p>
-
+        <div class="Add_user" id="Add_user"></div>
         <p><input type="button" value="保存并更新" id="Host_cron_update" class="Host_cron_update butt" style="position: relative;left: 80px;">&nbsp;&nbsp;<input
                 type="button" value="取消" id="concel" class="concel butt" style="position: relative;left: 120px;"></p>
     </div>
@@ -125,10 +124,22 @@
                 var hostname = $("#Hostnameid").val();
                 var ex_time = $("#Minute").val();
                 var command = $("#Hour").val();
-                var line = $("#Id").val();
-                var user = $("#User").val();
+                var Num_input = $('input:text').length;
+                if( Num_input == 3){
+                    console.log("if is ok");
+                    var line = null;
+                    var user = $(".Input_user").val();
+                    console.log(line);
+                    console.log(user);
+                }
+                else {
+                    var line = $("#Id").val();
+                    var user = $("#User").val();
+                }
                 console.log("post ex_time is");
                 console.log(ex_time, command);
+                console.log("input length is :");
+                console.log(Num_input);
                 console.log(hostname);
                 console.log(user);
                 $.ajax({
@@ -147,6 +158,7 @@
             });
             $(".concel").click(function () {
                 $(".Change_div").css("display", "none");
+                $(".Add_user").html("<div class='Add_user' id='Add_user'></div>")
             });
             $(".del_cron").click(function () {
                 alert("del cron");
@@ -166,6 +178,13 @@
                        alert("api error");
                    }
                });
+            });
+            $(".Add_cron").click(function () {
+                var Add_html = "<p>执行用户<input type='text' value='' class='Input_user' id='Input_user'><p>";
+                $(".Add_user").html(Add_html);
+                var hostname = $("#Host_name").html();
+                $("#Hostnameid").val(hostname);
+                $(".Change_div").css("display","block");
             });
         });
 

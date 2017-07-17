@@ -145,15 +145,22 @@ def Host_cron_update(request):
             Change_cron = ''
         else:
             Change_cron = Format_time + ' ' + Command + '\n'
-        if request.POST['Line']
-        Line = int(request.POST['Line'])
+
         Dir = "/var/spool/cron/"
         Open_file = str('/var/cache/salt/master/minions/'+ str(Hostname) +'/files' + Dir + str(File))
 
         f = open(Open_file,'r+')
         lines = f.readlines()
         f.close()
-        lines[Line-1] = Change_cron
+        # lee.prints(request.POST['Line'])
+        print (">>>>>>Line is:"),request.POST['Line']
+        Get_line = request.POST['Line']
+        if len(Get_line.strip()) == 0:
+            Line = len(lines) + 1
+            lines.append(Change_cron)
+        else:
+            Line = int(request.POST['Line'])
+            lines[Line-1] = Change_cron
         Salt_root = "/srv/salt/"
         f = open(Salt_root+File,'w+')
         f.writelines(lines)
