@@ -1,0 +1,25 @@
+.Change_div {
+    position: fixed;
+    width: 400px;
+    height: 600px;
+    background-color: #afd9ee;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+    z-index: 10;
+    display: none;
+}
+
+.butt {
+    position: relative;
+    left: 40px;
+    right: 40px;
+}
+.line_hide {
+    display: none;
+}
+
+p.Id {
+    display: none;
+}

@@ -1,0 +1,135 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    <h1 class="page-header">
+        Dashboard
+        <small>Welcome John Doe</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li class="active">Data</li>
+    </ol>
+{% endblock %}
+
+
+{% block page-inner %}
+    <table class="table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>IP</th>
+            <th>主机名</th>
+            <th>Mac地址</th>
+            <th>CPU型号</th>
+            <th>CPU核数</th>
+            <th>操作系统</th>
+            {#                <th>磁盘容量</th>#}
+            <th>是否虚拟机</th>
+            <th>所属机房</th>
+            <th>运行时长</th>
+            <th>所属业务</th>
+            <th>当前状态</th>
+        </tr>
+        {% for Hostid in Host_dict %}
+            <tr class="hostlist" id="id-hostlist">
+                {#                <td>{{ Hostid.ID }}</td>#}
+                <td>{{ forloop.counter }}</td>
+                <td>{{ Hostid.Ip }}</td>
+                <td>{{ Hostid.Hostname }}</td>
+                <td id="macaddress">{{ Hostid.Macaddress }}</td>
+                <td>{{ Hostid.Cpu }}</td>
+                <td>{{ Hostid.CpuCore }}</td>
+                <td>{{ Hostid.Operation }}</td>
+                <td>{{ Hostid.Isvirtual }}</td>
+                <td>{{ Hostid.Idc }}</td>
+                <td>{{ Hostid.Uptime }}</td>
+                <td>{{ Hostid.Applications }}</td>
+                {#                <td>{{ Hostid.Current }}</td>#}
+                {#                <td>正常</td>#}
+                <td>
+                    {% if Hostid.Macaddress == '' %}
+                        <input type="button" class="btn btn-info Initialize" value="初始化">
+                    {% else %}
+                        正常
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+{% block customjs %}
+    <script type="text/javascript">
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        function sameOrigin(url) {
+            // test that a given url is a same-origin URL
+            // url could be relative or scheme relative or absolute
+            var host = document.location.host; // host + port
+            var protocol = document.location.protocol;
+            var sr_origin = '//' + host;
+            var origin = protocol + sr_origin;
+            // Allow absolute or scheme relative URLs to same origin
+            return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                // or any other URL that isn't scheme relative or absolute i.e relative.
+                !(/^(\/\/|http:|https:).*/.test(url));
+        }
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    // Send the token to same-origin, relative URLs only.
+                    // Send the token only if the method warrants CSRF protection
+                    // Using the CSRFToken value acquired earlier
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        csrftoken = getCookie('csrftoken');
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $(document).ready(function () {
+            $(".Initialize").click(function () {
+                var Hostname = $(this).parents("tr").find("td").eq(2).html();
+                console.log(Hostname);
+                $.ajax({
+                    url: "/Initia/",
+                    type: "POST",
+                    data: {"hostname": Hostname},
+                    dataType: "json",
+                    success: function (result) {
+                        alert(result.result);
+                    },
+                    error: function (result) {
+                        alert("api error");
+                    }
+
+                });
+            });
+        });
+
+    </script>
+
+{% endblock %}

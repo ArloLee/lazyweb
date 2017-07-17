@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+
+{% block header %}
+
+    <h1 class="page-header">
+        Dashboard
+        <small>Welcome John Doe</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/index/">Home</a></li>
+        {#        <li><a href="#">Dashboard</a></li>#}
+        <li class="active">定时任务管理</li>
+    </ol>
+{% endblock %}
+
+
+{% block page-inner %}
+    <table class="table table-hover Crontab_list">
+        <tr>
+            <th>编号</th>
+            <th>主机名</th>
+            <th>主机Ip</th>
+            <th>更新时间</th>
+            <th>任务数量</th>
+        </tr>
+        {% for Hostname,Data in data.items %}
+            <tr id="value-flush">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ Hostname }}</td>
+                <td>{{ Data.Ipaddres }}</td>
+                <td>{{ Data.Updatetime }}</td>
+                <td><a href="/Host_crontab_list/?id={{ Hostname }}" class="Crontab_host_info" data-id="{{ Hostname }}">{{ Data.Cron_num }}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"
+                                                                                                            class="Crontab-update">更新</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {{ resu }}
+
+    </table>
+{% endblock %}
+
+
+{% block customjs %}
+    <script type="text/javascript">
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        function sameOrigin(url) {
+            // test that a given url is a same-origin URL
+            // url could be relative or scheme relative or absolute
+            var host = document.location.host; // host + port
+            var protocol = document.location.protocol;
+            var sr_origin = '//' + host;
+            var origin = protocol + sr_origin;
+            // Allow absolute or scheme relative URLs to same origin
+            return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                // or any other URL that isn't scheme relative or absolute i.e relative.
+                !(/^(\/\/|http:|https:).*/.test(url));
+        }
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    // Send the token to same-origin, relative URLs only.
+                    // Send the token only if the method warrants CSRF protection
+                    // Using the CSRFToken value acquired earlier
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        csrftoken = getCookie('csrftoken');
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $(document).ready(function () {
+            $(".Crontab-update").click(function () {
+                alert("update crontab ");
+                var Hostname = $(this).parents("tr").find("td").eq(1).html();
+                alert(Hostname);
+                $.ajax({
+                    url: /Crontab_update/,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {"Hostname": Hostname},
+                    success: function (result) {
+{#                        $("#value-flush").html(page);#}
+                        alert("Success");
+                        console.log(result.resu);
+                    },
+                    error: function (result) {
+                        alert("crontab update api error");
+                    }
+                });
+            });
+
+        });
+    </script>
+{% endblock %}

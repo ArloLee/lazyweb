@@ -1,0 +1,173 @@
+{% extends 'index.html' %}
+
+
+{% block header %}
+    <h1 class="page-header">
+        主机Crontab管理
+        <small>Welcome John Doe</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/index/">Home</a></li>
+        <li><a href="/Crontabindex/">定时任务管理</a></li>
+        <li class="active">主机Crontab管理</li>
+        <li id="Host_name">{{ hostname }}</li>
+    </ol>
+{% endblock %}
+{% block customcss %}
+{#    <style type="text/css" href="/static/css/lee.css"></style>#}
+    <link href="/static/css/lee.css" rel="stylesheet">
+{% endblock %}
+{% block page-inner %}
+    <table class="table table-hover">
+        <tr>
+            {#            <th>主机名</th>#}
+            <th>用户名</th>
+            <th>执行时间</th>
+            <th>执行命令</th>
+            <th>操作</th>
+        </tr>
+        {% for Cron_user,Cron_list in Cron_dict.items %}
+            {% for key,value in Cron_list.items %}
+                <tr>
+                    <td>{{ Cron_user }}</td>
+                    <td>{{ value.Ex_time }}</td>
+                    <td>{{ value.Command }}</td>
+                    <td><input type="button" value="修改" class="change_cron">&nbsp;<input type="button" value="删除" class="del_cron"></td>
+                    <td class="line_hide">{{ key }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+    <div class="Change_div">
+        <p id="Id" class="Id"></p>
+        <p id="Hostnameid" class="Id"></p>
+        <p id="User" class="Id"></p>
+        <p>执行时间<input type="text" value="" id="Minute" class="Minute"></p>
+        <p>执行命令<input type="text" value="" id="Hour" class="Hour"></p>
+
+        <p><input type="button" value="保存并更新" id="Host_cron_update" class="Host_cron_update butt" style="position: relative;left: 80px;">&nbsp;&nbsp;<input
+                type="button" value="取消" id="concel" class="concel butt" style="position: relative;left: 120px;"></p>
+    </div>
+{% endblock %}
+
+{% block customjs %}
+    <script type="text/javascript">
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        function sameOrigin(url) {
+            // test that a given url is a same-origin URL
+            // url could be relative or scheme relative or absolute
+            var host = document.location.host; // host + port
+            var protocol = document.location.protocol;
+            var sr_origin = '//' + host;
+            var origin = protocol + sr_origin;
+            // Allow absolute or scheme relative URLs to same origin
+            return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                // or any other URL that isn't scheme relative or absolute i.e relative.
+                !(/^(\/\/|http:|https:).*/.test(url));
+        }
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    // Send the token to same-origin, relative URLs only.
+                    // Send the token only if the method warrants CSRF protection
+                    // Using the CSRFToken value acquired earlier
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        csrftoken = getCookie('csrftoken');
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $(document).ready(function () {
+            $(".change_cron").click(function () {
+                var user = $(this).parents("tr").find("td").eq(0).html();
+                var ex_time = $(this).parents("tr").find("td").eq(1).html();
+                var command = $(this).parents("tr").find("td").eq(2).html();
+                var id = $(this).parents("tr").find("td").eq(-1).html();
+                var hostname = $("#Host_name").html();
+                console.log(id);
+                console.log("get ex_time is");
+                console.log(ex_time);
+                $(".Minute").val(ex_time);
+                $(".Hour").val(command);
+                $("#Id").val(id);
+                $("#Hostnameid").val(hostname);
+                $("#User").val(user);
+                $(".Change_div").css("display", "block");
+            });
+            $(".Host_cron_update").click(function () {
+                var hostname = $("#Hostnameid").val();
+                var ex_time = $("#Minute").val();
+                var command = $("#Hour").val();
+                var line = $("#Id").val();
+                var user = $("#User").val();
+                console.log("post ex_time is");
+                console.log(ex_time, command);
+                console.log(hostname);
+                console.log(user);
+                $.ajax({
+                    url: '/Host_cron_update/',
+                    type: 'POST',
+                    data: {"Hostname": hostname, "Ex_time": ex_time, "Command": command, "Line": line,"User": user},
+                    dataType: "json",
+                    success: function (result) {
+                        alert(result.resu.hostname);
+                    },
+                    error: function (result) {
+                        alert("api error");
+                    }
+                });
+                $(".Change_div").css("display", "none");
+            });
+            $(".concel").click(function () {
+                $(".Change_div").css("display", "none");
+            });
+            $(".del_cron").click(function () {
+                alert("del cron");
+                var user = $(this).parents("tr").find("td").eq(0).html();
+                var id = $(this).parents("tr").find("td").eq(-1).html();
+                var hostname = $("#Host_name").html();
+                console.log(user,id,hostname);
+               $.ajax({
+                  url: '/Host_cron_update/',
+                   type: 'POST',
+                   data: {"Hostname": hostname, "Ex_time": '', "Command": '', "Line": id,"User": user},
+                   dataType: "json",
+                   success: function (result) {
+                        alert("success");
+                   },
+                   error: function (result) {
+                       alert("api error");
+                   }
+               });
+            });
+        });
+
+    </script>
+{% endblock %}
