@@ -21,4 +21,3 @@ saltstack ops
 # jQuery
   version 3.2.1
 
-# function
