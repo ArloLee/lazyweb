@@ -21,3 +21,12 @@ saltstack ops
 # jQuery
   version 3.2.1
 
+# Need python models
+  salt
+  re
+  os
+  time
+  json
+  commands
+  MySQL-Python
+  
