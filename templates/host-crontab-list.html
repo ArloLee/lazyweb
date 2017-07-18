@@ -149,6 +149,7 @@
                     dataType: "json",
                     success: function (result) {
                         alert(result.resu.hostname);
+                        location.reload();
                     },
                     error: function (result) {
                         alert("api error");
@@ -173,6 +174,7 @@
                    dataType: "json",
                    success: function (result) {
                         alert("success");
+                        location.reload();
                    },
                    error: function (result) {
                        alert("api error");

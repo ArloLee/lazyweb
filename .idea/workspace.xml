@@ -18,12 +18,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmdb01/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="165" column="27" lean-forward="true" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
+            <state relative-caret-position="2178">
+              <caret line="165" column="27" lean-forward="false" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
               <folding>
+                <element signature="e#24#63#0" expanded="true" />
                 <element signature="e#392#431#0" expanded="false" />
                 <element signature="e#461#573#0" expanded="false" />
                 <element signature="e#607#925#0" expanded="false" />
@@ -74,20 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/devops01/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmdb01/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="264">
               <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
@@ -96,29 +87,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="host-crontab-list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/host-crontab-list.html">
+      <file leaf-file-name="crontabindex.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/crontabindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="129" column="35" lean-forward="false" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
-              <folding>
-                <element signature="n#block#1;n#!!top" expanded="false" />
-                <element signature="e#776#782#0#HTML" expanded="true" />
-                <element signature="e#782#788#0#HTML" expanded="true" />
-                <element signature="e#1165#1171#1#HTML" expanded="true" />
-                <element signature="e#1854#1974#0#HTML" expanded="false" />
-                <element signature="e#2104#2244#0#HTML" expanded="false" />
-                <element signature="e#2278#3017#0#HTML" expanded="false" />
-                <element signature="e#2292#2337#0#HTML" expanded="false" />
-                <element signature="e#3051#3699#0#HTML" expanded="false" />
-                <element signature="e#3147#3657#0#HTML" expanded="false" />
-                <element signature="e#3720#4186#0#HTML" expanded="false" />
-                <element signature="e#4253#4497#0#HTML" expanded="false" />
-                <element signature="e#6296#6789#0#HTML" expanded="false" />
-                <element signature="e#6581#6657#0#HTML" expanded="false" />
-                <element signature="e#6704#6771#0#HTML" expanded="false" />
-                <element signature="e#7110#7893#0#HTML" expanded="false" />
-              </folding>
+            <state relative-caret-position="750">
+              <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hostdis.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/hostdis.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hostlist.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/hostlist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="119" column="42" lean-forward="false" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,8 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this</find>
-      <find>c</find>
       <find>crontab</find>
       <find>sql</find>
       <find>Crontab</find>
@@ -186,6 +178,8 @@
       <find>print</find>
       <find>Hostnameid</find>
       <find>Host_name</find>
+      <find>del</find>
+      <find>.ajax</find>
     </findStrings>
     <dirStrings>
       <dir>E:\python\devops01</dir>
@@ -200,19 +194,19 @@
       <list>
         <option value="$PROJECT_DIR$/statics/css/test.html" />
         <option value="$PROJECT_DIR$/statics/js/custom-scripts.js" />
-        <option value="$PROJECT_DIR$/templates/hostdis.html" />
         <option value="$PROJECT_DIR$/../spider/app01.py" />
         <option value="$PROJECT_DIR$/devops01/settings.py" />
         <option value="$PROJECT_DIR$/cmdb01/admin.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/cmdb01/models.py" />
-        <option value="$PROJECT_DIR$/templates/crontabindex.html" />
-        <option value="$PROJECT_DIR$/templates/hostlist.html" />
         <option value="$PROJECT_DIR$/devops01/urls.py" />
         <option value="$PROJECT_DIR$/cmdb01/lee.py" />
         <option value="$PROJECT_DIR$/statics/css/lee.css" />
-        <option value="$PROJECT_DIR$/templates/host-crontab-list.html" />
         <option value="$PROJECT_DIR$/cmdb01/views.py" />
+        <option value="$PROJECT_DIR$/templates/host-crontab-list.html" />
+        <option value="$PROJECT_DIR$/templates/crontabindex.html" />
+        <option value="$PROJECT_DIR$/templates/hostdis.html" />
+        <option value="$PROJECT_DIR$/templates/hostlist.html" />
       </list>
     </option>
   </component>
@@ -244,6 +238,34 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LazyWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LazyWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LazyWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LazyWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -328,20 +350,6 @@
             <PATH_ELEMENT USER_OBJECT="cmdb01">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LazyWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LazyWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -627,17 +635,17 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13933548" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13933548" sideWeight="0.48933902" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13933548" sideWeight="0.5127932" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13933548" sideWeight="0.48720682" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.49573562" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33190578" sideWeight="0.49786323" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -720,6 +728,7 @@
         <state relative-caret-position="682">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
+            <element signature="e#24#63#0" expanded="true" />
             <element signature="e#392#431#0" expanded="false" />
             <element signature="e#461#573#0" expanded="false" />
             <element signature="e#607#925#0" expanded="false" />
@@ -749,21 +758,6 @@
           <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
             <element signature="n#block#1;n#!!top" expanded="false" />
-            <element signature="e#776#782#0#HTML" expanded="true" />
-            <element signature="e#782#788#0#HTML" expanded="true" />
-            <element signature="e#1165#1171#1#HTML" expanded="true" />
-            <element signature="e#1854#1974#0#HTML" expanded="false" />
-            <element signature="e#2104#2244#0#HTML" expanded="false" />
-            <element signature="e#2278#3017#0#HTML" expanded="false" />
-            <element signature="e#2292#2337#0#HTML" expanded="false" />
-            <element signature="e#3051#3699#0#HTML" expanded="false" />
-            <element signature="e#3147#3657#0#HTML" expanded="false" />
-            <element signature="e#3720#4186#0#HTML" expanded="false" />
-            <element signature="e#4253#4497#0#HTML" expanded="false" />
-            <element signature="e#6296#6789#0#HTML" expanded="false" />
-            <element signature="e#6581#6657#0#HTML" expanded="false" />
-            <element signature="e#6704#6771#0#HTML" expanded="false" />
-            <element signature="e#7110#7893#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,13 +782,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1364">
           <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-          <folding>
-            <element signature="e#1349#1489#0#HTML" expanded="false" />
-            <element signature="e#1523#2262#0#HTML" expanded="false" />
-            <element signature="e#2296#2944#0#HTML" expanded="false" />
-            <element signature="e#2965#3431#0#HTML" expanded="false" />
-            <element signature="e#3498#3742#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,6 +803,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#24#63#0" expanded="true" />
             <element signature="e#392#431#0" expanded="false" />
             <element signature="e#461#573#0" expanded="false" />
             <element signature="e#607#925#0" expanded="false" />
@@ -834,21 +823,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#block#1;n#!!top" expanded="false" />
-            <element signature="e#776#782#0#HTML" expanded="true" />
-            <element signature="e#782#788#0#HTML" expanded="true" />
-            <element signature="e#1165#1171#1#HTML" expanded="true" />
-            <element signature="e#1854#1974#0#HTML" expanded="false" />
-            <element signature="e#2104#2244#0#HTML" expanded="false" />
-            <element signature="e#2278#3017#0#HTML" expanded="false" />
-            <element signature="e#2292#2337#0#HTML" expanded="false" />
-            <element signature="e#3051#3699#0#HTML" expanded="false" />
-            <element signature="e#3147#3657#0#HTML" expanded="false" />
-            <element signature="e#3720#4186#0#HTML" expanded="false" />
-            <element signature="e#4253#4497#0#HTML" expanded="false" />
-            <element signature="e#6296#6789#0#HTML" expanded="false" />
-            <element signature="e#6581#6657#0#HTML" expanded="false" />
-            <element signature="e#6704#6771#0#HTML" expanded="false" />
-            <element signature="e#7110#7893#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,6 +857,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#24#63#0" expanded="true" />
             <element signature="e#392#431#0" expanded="false" />
             <element signature="e#461#573#0" expanded="false" />
             <element signature="e#607#925#0" expanded="false" />
@@ -902,21 +877,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#block#1;n#!!top" expanded="false" />
-            <element signature="e#776#782#0#HTML" expanded="true" />
-            <element signature="e#782#788#0#HTML" expanded="true" />
-            <element signature="e#1165#1171#1#HTML" expanded="true" />
-            <element signature="e#1854#1974#0#HTML" expanded="false" />
-            <element signature="e#2104#2244#0#HTML" expanded="false" />
-            <element signature="e#2278#3017#0#HTML" expanded="false" />
-            <element signature="e#2292#2337#0#HTML" expanded="false" />
-            <element signature="e#3051#3699#0#HTML" expanded="false" />
-            <element signature="e#3147#3657#0#HTML" expanded="false" />
-            <element signature="e#3720#4186#0#HTML" expanded="false" />
-            <element signature="e#4253#4497#0#HTML" expanded="false" />
-            <element signature="e#6296#6789#0#HTML" expanded="false" />
-            <element signature="e#6581#6657#0#HTML" expanded="false" />
-            <element signature="e#6704#6771#0#HTML" expanded="false" />
-            <element signature="e#7110#7893#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -948,6 +908,7 @@
         <state relative-caret-position="418">
           <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding>
+            <element signature="e#24#63#0" expanded="true" />
             <element signature="e#392#431#0" expanded="false" />
             <element signature="e#461#573#0" expanded="false" />
             <element signature="e#607#925#0" expanded="false" />
@@ -1040,6 +1001,7 @@
         <state relative-caret-position="748">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
+            <element signature="e#24#63#0" expanded="true" />
             <element signature="e#392#431#0" expanded="false" />
             <element signature="e#461#573#0" expanded="false" />
             <element signature="e#607#925#0" expanded="false" />
@@ -1127,46 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hostlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="110" column="11" lean-forward="true" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb01/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crontabindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#1349#1489#0#HTML" expanded="false" />
-            <element signature="e#1523#2262#0#HTML" expanded="false" />
-            <element signature="e#2296#2944#0#HTML" expanded="false" />
-            <element signature="e#2965#3431#0#HTML" expanded="false" />
-            <element signature="e#3498#3742#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hostdis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmdb01/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1078">
@@ -1201,27 +1123,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/host-crontab-list.html">
+    <entry file="file://$PROJECT_DIR$/cmdb01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="129" column="35" lean-forward="false" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+        <state relative-caret-position="2178">
+          <caret line="165" column="27" lean-forward="false" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
           <folding>
-            <element signature="n#block#1;n#!!top" expanded="false" />
-            <element signature="e#776#782#0#HTML" expanded="true" />
-            <element signature="e#782#788#0#HTML" expanded="true" />
-            <element signature="e#1165#1171#1#HTML" expanded="true" />
-            <element signature="e#1854#1974#0#HTML" expanded="false" />
-            <element signature="e#2104#2244#0#HTML" expanded="false" />
-            <element signature="e#2278#3017#0#HTML" expanded="false" />
-            <element signature="e#2292#2337#0#HTML" expanded="false" />
-            <element signature="e#3051#3699#0#HTML" expanded="false" />
-            <element signature="e#3147#3657#0#HTML" expanded="false" />
-            <element signature="e#3720#4186#0#HTML" expanded="false" />
-            <element signature="e#4253#4497#0#HTML" expanded="false" />
-            <element signature="e#6296#6789#0#HTML" expanded="false" />
-            <element signature="e#6581#6657#0#HTML" expanded="false" />
-            <element signature="e#6704#6771#0#HTML" expanded="false" />
-            <element signature="e#7110#7893#0#HTML" expanded="false" />
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#392#431#0" expanded="false" />
+            <element signature="e#461#573#0" expanded="false" />
+            <element signature="e#607#925#0" expanded="false" />
+            <element signature="e#962#1672#0" expanded="false" />
+            <element signature="e#3162#3751#0" expanded="false" />
+            <element signature="e#4246#5534#0" expanded="false" />
+            <element signature="e#4619#5073#0" expanded="false" />
+            <element signature="e#4979#5073#0" expanded="false" />
+            <element signature="e#7300#7317#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1238,21 +1154,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb01/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/host-crontab-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="165" column="27" lean-forward="true" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
+        <state relative-caret-position="151">
+          <caret line="134" column="22" lean-forward="true" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
           <folding>
-            <element signature="e#392#431#0" expanded="false" />
-            <element signature="e#461#573#0" expanded="false" />
-            <element signature="e#607#925#0" expanded="false" />
-            <element signature="e#962#1672#0" expanded="false" />
-            <element signature="e#3162#3751#0" expanded="false" />
-            <element signature="e#4246#5534#0" expanded="false" />
-            <element signature="e#4619#5073#0" expanded="false" />
-            <element signature="e#4979#5073#0" expanded="false" />
-            <element signature="e#7300#7317#0" expanded="false" />
+            <element signature="n#block#1;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmdb01/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crontabindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hostdis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hostlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="119" column="42" lean-forward="false" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

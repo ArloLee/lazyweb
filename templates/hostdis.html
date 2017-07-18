@@ -109,6 +109,7 @@
                     success: function (result) {
                         alert(result.rollback);
                         alert(result.result);
+                        location.reload();
                     },
                     error: function (result) {
                         alert("接口调用失败");
